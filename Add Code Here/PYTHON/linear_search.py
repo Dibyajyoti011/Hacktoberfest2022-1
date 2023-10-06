@@ -1,20 +1,15 @@
-# Linear Search in Python
+def linear_search(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i  # Return the index where the target element is found
+    return -1  # Return -1 if the target element is not in the list
 
+# Example usage:
+my_list = [10, 23, 45, 7, 15, 56, 89]
+target_element = 15
+result = linear_search(my_list, target_element)
 
-def linearSearch(array, n, x):
-
-    # Going through array sequencially
-    for i in range(0, n):
-        if (array[i] == x):
-            return i
-    return -1
-
-
-array = [2, 4, 0, 1, 9]
-x = 1
-n = len(array)
-result = linearSearch(array, n, x)
-if(result == -1):
-    print("Element not found")
+if result != -1:
+    print(f"Element {target_element} found at index {result}")
 else:
-    print("Element found at index: ", result)
+    print(f"Element {target_element} not found in the list")
